@@ -1,15 +1,17 @@
 /* ================= VARIABLES ================= */
 :root {
-  --color-bg: #f4f6fb;
+  --color-bg: #fef6f2;
   --color-surface: #ffffff;
-  --color-primary: #4f46e5;
-  --color-primary-dark: #3730a3;
-  --color-secondary: #06b6d4;
-  --color-text: #1f2937;
-  --color-text-light: #6b7280;
-  --color-border: #e5e7eb;
-  --color-danger: #ef4444;
-  --color-success: #10b981;
+  --color-primary: #e84343;
+  --color-primary-dark: #c0392b;
+  --color-secondary: #f7a072;
+  --color-accent: #f9d56e;
+  --color-accent-pink: #f8a5c2;
+  --color-text: #2d1b1b;
+  --color-text-light: #7a5a5a;
+  --color-border: #f0ddd6;
+  --color-danger: #e84343;
+  --color-success: #2ecc71;
   --radius: 12px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   --transition: 0.2s ease;
@@ -46,6 +48,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 3px solid var(--color-accent);
 }
 
 .header__logo {
@@ -70,7 +73,14 @@ body {
   color: var(--color-primary);
 }
 
-/* Hamburguesa (oculta en escritorio) */
+.nav__link#btnCerrarSesion {
+  color: var(--color-danger);
+}
+
+.nav__link#btnCerrarSesion:hover {
+  color: var(--color-primary-dark);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -168,7 +178,7 @@ body {
   font-size: 0.8rem;
 }
 
-.btn--edit { background: var(--color-secondary); color: #fff; }
+.btn--edit { background: var(--color-accent); color: var(--color-text); }
 .btn--delete { background: var(--color-danger); color: #fff; }
 
 /* ================= STATS GRID ================= */
@@ -268,6 +278,13 @@ body {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 .form-actions {
@@ -355,7 +372,6 @@ body {
     text-align: center;
   }
 
-  /* Tabla -> tarjetas en móvil */
   .tabla-gastos thead {
     display: none;
   }
@@ -454,6 +470,7 @@ body {
 
 .form-login .form-actions {
   display: flex;
+  flex-direction: column;
   gap: 0.6rem;
 }
 
